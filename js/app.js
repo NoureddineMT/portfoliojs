@@ -47,8 +47,13 @@ sun.addEventListener("click", function () {
 emailjs.init("user_L4nfiowxPEOb4DM8LyTtv");
 
 function sendEmail() {
-    // Ottieni il pulsante di invio
     var sendButton = document.querySelector("#sendButton");
+    var recaptchaResponse = grecaptcha.getResponse(); // Ottieni il valore del CAPTCHA
+
+    if (!recaptchaResponse) {
+        alert("Please complete the CAPTCHA before sending the message.");
+        return;
+    }
 
     // Disabilita il pulsante per evitare spam
     sendButton.disabled = true;
@@ -59,7 +64,8 @@ function sendEmail() {
         from_name: document.getElementById("from_name").value,
         email: document.getElementById("email").value,
         subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value
+        message: document.getElementById("message").value,
+        "g-recaptcha-response": recaptchaResponse // Aggiungi il CAPTCHA ai dati inviati
     };
 
     // Invia l'email utilizzando Email.js
@@ -73,8 +79,9 @@ function sendEmail() {
             successMessage.innerText = "Your message has been sent successfully!";
             document.getElementById("contactForm").appendChild(successMessage);
 
-            // Resetta il modulo dopo l'invio
+            // Resetta il modulo e il CAPTCHA
             document.getElementById("contactForm").reset();
+            grecaptcha.reset();
 
             // Riattiva il pulsante dopo 3 secondi
             setTimeout(() => {
@@ -100,4 +107,3 @@ function sendEmail() {
             }, 3000);
         });
 }
-

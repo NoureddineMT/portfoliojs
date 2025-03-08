@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <title>Noureddine Mouatamid</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -198,10 +199,12 @@
                                     <textarea class="form-control" id="message" name="message" rows="4"
                                         placeholder="Write your message..." required></textarea>
                                 </div>
-                                <div class="d-grid">
-                                    <button type="button" id="sendButton" class="btn btn-primary fw-semibold"
-                                        onclick="sendEmail()">Send Message</button>
+                                <div class="mb-3 text-center">
+                                    <div class="g-recaptcha" data-sitekey="6LdV9-0qAAAAAAo-a1d0IdmrZ8quS0aYzheMc49z"></div>
                                 </div>
+                                <div class="d-grid">
+                                    <button type="button" id="sendButton" class="btn btn-primary fw-semibold" onclick="sendEmail()">Send Message</button>
+                                </div>                                
                             </form>
                         </div>
                     </div>
