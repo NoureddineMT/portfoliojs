@@ -1,0 +1,35 @@
+{
+    "home": {
+        "title": "Noureddine MOUATAMID",
+        "role": "Web",
+        "role2": "Developer"
+    },
+    "about": {
+        "title": "Who is",
+        "name": "Noureddine MOUATAMID",
+        "profile": "Full stack developer",
+        "secondTitle": "About Me",
+        "description": "I am Noureddine MOUATAMID, a twenty-four-year-old passionate about technology and professional development. Currently, I live in the beautiful city of Cannes, where I am pursuing a vocational training program at AFPA. My goal is to obtain a Bac+2 level professional diploma. Since childhood, I have developed a deep interest in technology and its impact on our way of life and work. My current training allows me to acquire advanced skills and specialized knowledge that will prepare me for future challenges and opportunities in the field I love",
+        "link": "img/pdf/dev_web_NMT_en.pdf",
+        "skills": "Skills"
+        
+    },
+    "portfolio": {
+        "titleCar": "Car Website",
+        "description": "Homepage of a simple car sales website using JavaScript, HTML, CSS",
+        "github": "Github",
+        "visit_site": "Visit Site"
+    },
+    "contact": {
+        "title": "Contact Me",
+        "name": "Name: ",
+        "email": "Email: ",
+        "subject": "Subject: ",
+        "subjectSelect": "Select a subject",
+        "subjectJob": "Job Opportunity",
+        "subjectFreelance": "Freelance Project",
+        "other": "Other",
+        "message": "Message: ",
+        "submit": "Send Message"
+    }
+}

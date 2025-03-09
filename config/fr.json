@@ -1,0 +1,34 @@
+{
+    "home": {
+        "title": "Noureddine MOUATAMID",
+        "role": "Développeur",
+        "role2": "Web"
+    },
+    "about": {
+        "title": "Qui est",
+        "name": "Noureddine MOUATAMID",
+        "profile": "Développeur full stack",
+        "link": "img/pdf/dev_web_NMT_fr.pdf",
+        "description": "Je suis Noureddine MOUATAMID, un jeune homme de vingt-quatre ans passionné par le monde de la technologie et du développement professionnel. Actuellement, je réside dans la magnifique ville de Cannes, où je suis engagé dans un parcours de formation professionnelle à l'AFPA. Mon objectif est d'obtenir un diplôme professionnel de niveau Bac+2. Depuis mon plus jeune âge, j'ai développé un intérêt profond pour la technologie et son impact sur notre mode de vie et de travail. Ma formation actuelle me permet d'acquérir des compétences avancées et des connaissances spécialisées qui me prépareront aux défis et opportunités futures dans le domaine que j'aime.",
+        "secondTitle": "À propos de moi",
+        "skills": "Compétences"
+    },
+    "portfolio": {
+        "titleCar": "Site Voiture",
+        "description": "Page d'accueil d'un simple site de vente de voitures utilisant JavaScript, HTML, CSS",
+        "github": "Github",
+        "visit_site": "Visiter le site"
+    },
+    "contact": {
+        "title": "Contactez-moi",
+        "name": "Nom: ",
+        "email": "Email: ",
+        "subject": "Sujet: ",
+        "subjectSelect": "Sélectionnez un sujet",
+        "subjectJob": "Offre d'emploi",
+        "subjectFreelance": "Projet freelance",
+        "other": "Autre",
+        "message": "Message: ",
+        "submit": "Envoyer le message: "
+    }
+}

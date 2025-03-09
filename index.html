@@ -18,16 +18,18 @@
 <body>
     <!--  Navbar -->
     <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg bg-invisible ">
+        <nav class="navbar navbar-expand-lg bg-invisible">
             <div class="container">
-                <a class="wlogoImg" href="#"><img class="w-25" src="img/png/logo-no-background.png"></a>
+                <a class="wlogoImg" href="#">
+                    <img class="wlogoImg" src="img/png/logo-no-background.png" alt="Logo">
+                </a>
                 <button class="navbar-toggler bg-purple" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
                         <li class="nav-item p-1">
                             <a class="nav-link hover font-lg ps-1" href="#about">About</a>
                         </li>
@@ -38,13 +40,20 @@
                             <a class="nav-link hover font-lg ps-1" href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <div class="bg-purple w-25 rounded-pill d-flex justify-content-around">
-                        <ul class="list-style-none row m-0 p-2">
+                    <div class="language-container me-2">
+                        <select id="language-selector" class="form-select2">
+                            <option value="en">English</option>
+                            <option value="fr">Français</option>
+                            <option value="it">Italiano</option>
+                        </select>
+                    </div>
+                    <div class="bg-purple rounded-pill d-flex justify-content-around p-2 mode-toggle">
+                        <ul class="list-style-none row m-0">
                             <li id="sun" class="col-6 d-none">
-                                <i class="fa-solid fa-sun" style="color: #ffffff;"></i>
+                                <i class="fa-solid fa-sun text-white"></i>
                             </li>
                             <li id="moon" class="col-6">
-                                <i class="fa-solid fa-moon" style="color: #ffffff;"></i>
+                                <i class="fa-solid fa-moon text-white"></i>
                             </li>
                         </ul>
                     </div>
@@ -56,20 +65,20 @@
         <section class="vh-100 bg-img" id="home">
             <div class="vh-100 d-flex justify-content-center align-items-center bg-semipurple">
                 <div class="container">
-                    <h2 class="text-center title-potfolio">Noureddine MOUATAMID</h2>
+                    <h2 data-translate="home.title" class="text-center title-potfolio">test</h2>
                     <h4 class="text-center">
-                        <span class="job title-potfolio">Developpeur </span>
-                        <span class="job1 title-potfolio">web</span>
+                        <span data-translate="home.role" class="job title-potfolio">Developpeur </span>
+                        <span data-translate="home.role2" class="job1 title-potfolio">web</span>
                     </h4>
                 </div>
             </div>
         </section>
         <section class="d-flex align-items-center justify-content-center bg-white h-page pt-3 " id="about">
             <div class="container shadow-card p-1">
-                <h3 class="h3-purple color-change3 text-center p-1">Who is </h3>
-                <h2 class="h2-darkgrey color-change2 text-center">Noureddine MOUATAMID</h2>
-                <div class="d-flex justify-content-center"><a type="button" href="img/pdf/dev_web_NMT.pdf"
-                        target="_blank" class="btn btn-purple p-2">CV</a></div>
+                <h3 data-translate="about.title" class="h3-purple color-change3 text-center p-1">Who is </h3>
+                <h2 data-translate="about.name" class="h2-darkgrey color-change2 text-center">Noureddine MOUATAMID</h2>
+                <div class="d-flex justify-content-center"><a data-translate="about.link" type="button"
+                        href="img/pdf/dev_web_NMT.pdf" target="_blank" class="btn btn-purple p-2">CV</a></div>
                 <div class="row p-5  align-items-center">
                     <div class="col-12 col-lg-7 d-flex align-items-center justify-content-center">
                         <div class="row col-12 justify-content-center align-items-center">
@@ -84,7 +93,7 @@
                                         </span>
                                     </li>
                                     <li class="list-style-none text-darkgrey">Profile :
-                                        <span class="text-darkgrey">
+                                        <span data-translate="about.profile" class="text-darkgrey">
                                             Full stack developer
                                         </span>
                                     </li>
@@ -96,7 +105,7 @@
                                 </ul>
                             </div>
                             <div class="col-12 pt-5 align-items-center">
-                                <h4 class="h4-purple">Skills : </h4>
+                                <h4 data-translate="about.skills" class="h4-purple">Skills : </h4>
                                 <h5 class="h5-darkgrey text-darkgrey pt-2">Html&Css : </h5>
                                 <div class="progress bg-darkgrey mb-1" role="progressbar"
                                     aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
@@ -131,8 +140,8 @@
                         </div>
                     </div>
                     <div class="row align-items-center col-12 col-lg-5 ">
-                        <h3 class="h3-purple mt-3 mt-lg-1">About me</h3>
-                        <p class="text-darkgrey d-flex align-items-center text-center text-lg-start pt-2">
+                        <h3 data-translate="about.secondTitle" class="h3-purple mt-3 mt-lg-1">About me</h3>
+                        <p data-translate="about.description" class="text-darkgrey d-flex align-items-center text-center text-lg-start pt-2">
                             Je suis Noureddine MOUATAMID, un jeune de vingt-trois ans passionné par le monde de la
                             technologie et du développement professionnel. Actuellement, je réside dans la magnifique
                             ville de Cannes, où je suis engagé dans un parcours de formation professionnelle à l'AFPA.
@@ -149,62 +158,67 @@
         </section>
         <section class="d-flex align-items-center justify-content-center bg-img h-page" id="portfolio">
             <div class="row">
-					<div class="col-md-3">
-						<div class="card" id="cards" style="width: 18rem;">
-							<img src="img/png/siteCar.png" class="card-img-top" alt="...">
-							<div class="card-body">
-								<h5 class="card-title">Site Voiture</h5>
-								<p class="card-text">Page d'accueil d'un site de vente de voitures simple utilisant JavaScript, HTML, CSS</p>
-								<a href="https://noureddinemt.github.io/Site-voiture/" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary me-2">
-									<i class="fas fa-link"></i>
-									Visit Site
-								</a>
-								<a href="https://github.com/NoureddineMT/Site-voiture" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary">
-									<i class="fab fa-github"></i>
-									Github
-								</a>
-							</div>
-						</div>
-					</div>
-			</div>
+                <div class="col-md-3">
+                    <div class="card" id="cards" style="width: 18rem;">
+                        <img src="img/png/siteCar.png" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 data-translate="portfolio.title" class="card-title">Site Voiture</h5>
+                            <p data-translate="portfolio.description" class="card-text">Page d'accueil d'un site de vente de voitures simple utilisant
+                                JavaScript, HTML, CSS</p>
+                            <a data-translate="portfolio.visit_site" href="https://noureddinemt.github.io/Site-voiture/" target="_blank"
+                                rel="noopener noreferrer" class="btn2 btn-primary me-2">
+                                <i class="fas fa-link"></i>
+                                Visit Site
+                            </a>
+                            <a href="https://github.com/NoureddineMT/Site-voiture" target="_blank"
+                                rel="noopener noreferrer" class="btn2 btn-primary">
+                                <i class="fab fa-github"></i>
+                                Github
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="d-flex align-items-center bg-white justify-content-center h-page pt-3 " id="contact">
             <div class="container mt-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-6 col-md-8 col-sm-10">
                         <div class="card shadow-lg border-0 rounded-3 p-4">
-                            <h2 class="text-center text-dark mb-4">Contact Me</h2>
+                            <h2 data-translate="contact.title" class="text-center text-dark mb-4">Contact Me</h2>
                             <form id="contactForm">
                                 <div class="mb-3">
-                                    <label for="from_name" class="form-label fw-semibold text-dark">Name:</label>
+                                    <label data-translate="contact.name" for="from_name" class="form-label fw-semibold text-dark">Name:</label>
                                     <input type="text" class="form-control" id="from_name" name="from_name"
-                                        placeholder="Enter your name" required>
+                                        placeholder="John Doe" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label fw-semibold text-dark">Email:</label>
+                                    <label data-translate="contact.email" for="email" class="form-label fw-semibold text-dark">Email:</label>
                                     <input type="email" class="form-control" id="email" name="email"
-                                        placeholder="Enter your email" required>
+                                        placeholder="hola@exemple.com" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="subject" class="form-label fw-semibold text-dark">Subject:</label>
+                                    <label data-translate="contact.subject" for="subject" class="form-label fw-semibold text-dark">Subject:</label>
                                     <select class="form-select text-dark" id="subject" name="subject" required>
-                                        <option class="text-dark" value="" selected disabled>Select a subject</option>
-                                        <option class="text-dark" value="Job Opportunity">Job Opportunity</option>
-                                        <option class="text-dark" value="Freelance Project">Freelance Project</option>
-                                        <option class="text-dark" value="Other">Other</option>
+                                        <option data-translate="contact.subjectSelect" class="text-dark" value="" selected disabled>Select a subject</option>
+                                        <option data-translate="contact.subjectJob" class="text-dark" value="Job Opportunity">Job Opportunity</option>
+                                        <option data-translate="contact.subjectFreelance" class="text-dark" value="Freelance Project">Freelance Project</option>
+                                        <option data-translate="contact.other" class="text-dark" value="Other">Other</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="message" class="form-label fw-semibold text-dark">Message:</label>
+                                    <label data-translate="contact.message" for="message" class="form-label fw-semibold text-dark">Message:</label>
                                     <textarea class="form-control" id="message" name="message" rows="4"
-                                        placeholder="Write your message..." required></textarea>
+                                        placeholder="Hola..." required></textarea>
                                 </div>
                                 <div class="mb-3 text-center">
-                                    <div class="g-recaptcha" data-sitekey="6LdV9-0qAAAAAAo-a1d0IdmrZ8quS0aYzheMc49z"></div>
+                                    <div class="g-recaptcha" data-sitekey="6LdV9-0qAAAAAAo-a1d0IdmrZ8quS0aYzheMc49z">
+                                    </div>
                                 </div>
                                 <div class="d-grid">
-                                    <button type="button" id="sendButton" class="btn btn-primary fw-semibold" onclick="sendEmail()">Send Message</button>
-                                </div>                                
+                                    <button data-translate="contact.submit" type="button" id="sendButton" class="btn btn-primary fw-semibold"
+                                        onclick="sendEmail()">Send Message</button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -219,6 +233,9 @@
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="js/app.js"></script>
+    <script>
+        
+    </script>
 </body>
 
 </html>

@@ -9,6 +9,7 @@ a {
 
 .list-style-none {
     list-style: none;
+    padding-inline-start: 0;
 }
 
 .h2-purple {
@@ -42,17 +43,21 @@ a {
     font-size: 2.5rem;
     color: #212025;
 }
-.h4-purple{
+
+.h4-purple {
     font-size: 1.5rem;
     color: #676cdb;
 }
+
 .h5-darkgrey {
     font-size: 1rem;
     color: #212025;
 }
+
 .h-page {
     min-height: 57rem;
 }
+
 .title-potfolio {
     font-size: 4rem;
     color: #00000000;
@@ -62,6 +67,7 @@ a {
 }
 
 /* * NavBar */
+/* Mantiene il tuo stile originale */
 .hover {
     color: white;
 }
@@ -80,13 +86,80 @@ a {
     transform: scale(1.5);
 }
 
-.top-sticky {
-    position: sticky;
-    top: 0;
-}
-.wlogoImg{
+/* Mantiene il logo grande senza rovinare la navbar */
+.wlogoImg {
     width: 40%;
+    max-width: 200px;
+    /* Evita che diventi troppo grande su schermi grandi */
 }
+
+/* Navbar più compatta su mobile */
+.navbar-toggler {
+    border: none;
+    outline: none;
+}
+
+.navbar-nav {
+    flex-grow: 1;
+    justify-content: center;
+}
+
+/* Select Lingua senza occupare troppo spazio */
+.lang-selector {
+    min-width: 140px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Contenitore Dark Mode */
+.mode-toggle {
+    width: 50px;
+}
+
+/* Migliora la navbar su schermi piccoli */
+@media (max-width: 768px) {
+    .wlogoImg {
+        width: 50%;
+        max-width: 120px;
+        /* Adatta il logo sui telefoni */
+    }
+
+    .lang-selector {
+        font-size: 14px;
+    }
+
+    .mode-toggle {
+        max-width: 120px;
+        margin-top: 0.5rem;
+    }
+}
+
+.form-select2 {
+    background-color: #676cdb;
+    /* Stesso colore del bottone */
+    --bs-form-select-bg-img: none;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-weight: bold;
+    text-align: center;
+    appearance: none;
+    /* Rimuove lo stile predefinito */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.form-select2:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(103, 108, 219, 0.5);
+}
+.language-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 /* * first section */
 .name {
     font-size: 4rem;
@@ -151,6 +224,7 @@ a {
         color: #212121;
     }
 }
+
 @keyframes changeColor4 {
     0% {
         color: #676cdb;
@@ -190,6 +264,7 @@ a {
 .color-change3 {
     animation: changeColor3 3s infinite;
 }
+
 .color-change4 {
     animation: changeColor4 3s infinite;
 }
@@ -221,11 +296,13 @@ a {
     background-attachment: fixed;
 
 }
+
 .shadow-card {
-    box-shadow: 0px 0px 18px 10px rgba(0,0,0,0.34);
-    -webkit-box-shadow: 0px 0px 18px 10px rgba(0,0,0,0.34);
-    -moz-box-shadow: 0px 0px 18px 10px rgba(0,0,0,0.34);
+    box-shadow: 0px 0px 18px 10px rgba(0, 0, 0, 0.34);
+    -webkit-box-shadow: 0px 0px 18px 10px rgba(0, 0, 0, 0.34);
+    -moz-box-shadow: 0px 0px 18px 10px rgba(0, 0, 0, 0.34);
 }
+
 .bg-semipurple {
     background-color: rgba(103, 109, 219, 0.3)
 }
@@ -243,9 +320,11 @@ a {
 .bg-purple {
     background-color: #676cdb;
 }
-.bg-invisible{
+
+.bg-invisible {
     background-color: #00000000;
 }
+
 .bg-white {
     background-color: white;
 }

@@ -46,9 +46,40 @@ sun.addEventListener("click", function () {
 // Inizializza Email.js con le tue credenziali API
 emailjs.init("user_L4nfiowxPEOb4DM8LyTtv");
 
+// Funzione per impostare un cookie
+function setCookie(name, value, hours) {
+    let date = new Date();
+    date.setTime(date.getTime() + (hours * 60 * 60 * 1000));
+    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
+}
+
+// Funzione per ottenere un cookie
+function getCookie(name) {
+    let cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        let [key, value] = cookie.split("=");
+        if (key === name) {
+            return value;
+        }
+    }
+    return null;
+}
+
+// Funzione per controllare se l'utente ha già inviato un'email
+function checkEmailSent() {
+    let lastSent = getCookie("emailSent");
+    let sendButton = document.getElementById("sendButton");
+
+    if (lastSent) {
+        sendButton.disabled = true;
+        sendButton.innerText = "You have to wait 24 hours";
+    }
+}
+
+// Funzione per inviare l'email
 function sendEmail() {
-    var sendButton = document.querySelector("#sendButton");
-    var recaptchaResponse = grecaptcha.getResponse(); // Ottieni il valore del CAPTCHA
+    let sendButton = document.querySelector("#sendButton");
+    let recaptchaResponse = grecaptcha.getResponse();
 
     if (!recaptchaResponse) {
         alert("Please complete the CAPTCHA before sending the message.");
@@ -59,42 +90,38 @@ function sendEmail() {
     sendButton.disabled = true;
     sendButton.innerText = "Sending...";
 
-    // Raccogli i dati dal modulo
-    var data = {
+    let data = {
         from_name: document.getElementById("from_name").value,
         email: document.getElementById("email").value,
         subject: document.getElementById("subject").value,
         message: document.getElementById("message").value,
-        "g-recaptcha-response": recaptchaResponse // Aggiungi il CAPTCHA ai dati inviati
+        "g-recaptcha-response": recaptchaResponse
     };
 
-    // Invia l'email utilizzando Email.js
     emailjs.send("service_lqfv46f", "template_dnxwwsr", data)
-        .then(function (response) {
+        .then(response => {
             console.log("Email inviata con successo:", response);
 
-            // Mostra un messaggio di conferma all'utente
-            var successMessage = document.createElement("div");
+            // Imposta il cookie per bloccare il pulsante per 24 ore
+            setCookie("emailSent", "true", 24);
+
+            // Mostra il messaggio di conferma
+            let successMessage = document.createElement("div");
             successMessage.className = "alert alert-success mt-3";
             successMessage.innerText = "Your message has been sent successfully!";
             document.getElementById("contactForm").appendChild(successMessage);
 
-            // Resetta il modulo e il CAPTCHA
+            // Reset del form e CAPTCHA
             document.getElementById("contactForm").reset();
             grecaptcha.reset();
 
-            // Riattiva il pulsante dopo 3 secondi
-            setTimeout(() => {
-                sendButton.disabled = false;
-                sendButton.innerText = "Send Message";
-                successMessage.remove();
-            }, 3000);
+            // Disabilita il pulsante fino a quando non scade il cookie
+            sendButton.innerText = "You have to wait 24 hours";
         })
-        .catch(function (error) {
+        .catch(error => {
             console.error("Errore durante l'invio dell'email:", error);
 
-            // Mostra un messaggio di errore all'utente
-            var errorMessage = document.createElement("div");
+            let errorMessage = document.createElement("div");
             errorMessage.className = "alert alert-danger mt-3";
             errorMessage.innerText = "Failed to send message. Please try again.";
             document.getElementById("contactForm").appendChild(errorMessage);
@@ -107,3 +134,48 @@ function sendEmail() {
             }, 3000);
         });
 }
+
+// Controlla se l'utente ha già inviato una mail all'avvio della pagina
+document.addEventListener("DOMContentLoaded", checkEmailSent);
+
+const languageSelector = document.getElementById("language-selector");
+
+// Funzione per caricare il file JSON in base alla lingua selezionata
+async function loadTranslation(language) {
+    try {
+        const response = await fetch(`config/${language}.json`);
+        const translations = await response.json();
+
+        document.querySelectorAll("[data-translate]").forEach(el => {
+            const translationKey = el.getAttribute("data-translate");
+
+            // Suddivide la key in array (es. "home.title" -> ["home", "title"])
+            const keyParts = translationKey.split(".");
+
+            // Naviga nell'oggetto JSON per trovare la traduzione
+            let translatedText = translations;
+            for (const part of keyParts) {
+                translatedText = translatedText?.[part];
+            }
+
+            if (translatedText) {
+                if (el.tagName === "A" && translationKey === "about.link") {
+                    el.setAttribute("href", translatedText); // Cambia il link
+                } else {
+                    el.textContent = translatedText;
+                }
+            }
+        });
+    } catch (error) {
+        console.error("Errore nel caricamento delle traduzioni:", error);
+    }
+}
+
+// Event listener per il cambio lingua
+languageSelector.addEventListener("change", () => {
+    const selectedLanguage = languageSelector.value;
+    loadTranslation(selectedLanguage);
+});
+
+// Carica la lingua di default (inglese)
+loadTranslation("en");
