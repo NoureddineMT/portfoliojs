@@ -1,51 +1,86 @@
-let moon = document.getElementById("moon")
-let sun = document.getElementById("sun")
-let bgDark = document.querySelectorAll(".bg-darkgrey");
-let bgLight = document.querySelectorAll(".bg-white");
-let progressBar = document.querySelectorAll(".progress")
-let darkgreyText = document.querySelectorAll(".text-darkgrey")
-let colorChange2 = document.querySelectorAll(".color-change2")
-let colorChange3 = document.querySelectorAll(".color-change3")
+document.addEventListener("DOMContentLoaded", () => {
+    const moon = document.getElementById("moon");
+    const sun = document.getElementById("sun");
 
-$(window).scroll(function () {
-    var height = $(window).scrollTop();
-    if (height > 5) {
-        $("nav").addClass("bg-darkgrey shadow-sm").removeClass("bg-invisible");
-    } else {
-        $("nav").addClass("bg-invisible").removeClass("bg-darkgrey shadow-sm");
+    const elementsToToggle = [
+        { selector: ".bg-darkgrey", dark: "bg-darkgrey", light: "bg-white" },
+        { selector: ".bg-white", dark: "bg-darkgrey", light: "bg-white" },
+        { selector: ".progress", dark: "bg-white", light: "bg-darkgrey" },
+        { selector: ".text-darkgrey", dark: "text-white", light: "text-darkgrey" },
+        { selector: ".text-white", dark: "text-white", light: "text-darkgrey" },
+        { selector: ".color-change2", dark: "color-change4", light: "color-change2" },
+        { selector: ".color-change3", dark: "color-change5", light: "color-change3" }
+    ];
+
+    function toggleTheme(isDark) {
+        moon.classList.toggle("d-none", isDark);
+        sun.classList.toggle("d-none", !isDark);
+
+        elementsToToggle.forEach(({ selector, dark, light }) => {
+            document.querySelectorAll(selector).forEach(el => {
+                el.classList.toggle(dark, isDark);
+                el.classList.toggle(light, !isDark);
+            });
+        });
+
+        // Salva la scelta nei cookie/localStorage
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    }
+
+    // Event listener per il cambio tema
+    moon.addEventListener("click", () => toggleTheme(true));
+    sun.addEventListener("click", () => toggleTheme(false));
+
+    // Controlla il tema salvato e lo applica
+    if (localStorage.getItem("theme") === "dark") {
+        toggleTheme(true);
     }
 });
 
-function themeChange(list, firstClass, secondClass) {
-    for (let i = 0; i < list.length; i++) {
-        list[i].classList.add(firstClass);
-        list[i].classList.remove(secondClass);
+// Cambia colore navbar allo scroll
+$(window).scroll(function () {
+    $("nav").toggleClass("bg-dark shadow-sm", $(window).scrollTop() > 5);
+    $("nav").toggleClass("bg-invisible", $(window).scrollTop() <= 5);
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cookieModal = new bootstrap.Modal(document.getElementById("cookie-modal"));
+    const acceptCookiesBtn = document.getElementById("accept-cookies");
+
+    // Controlla se i cookie sono già stati accettati
+    if (!localStorage.getItem("cookiesAccepted")) {
+        cookieModal.show(); // Mostra il modal se i cookie non sono accettati
     }
+
+    // Nasconde il modal e salva la scelta nei cookie/localStorage
+    acceptCookiesBtn.addEventListener("click", () => {
+        localStorage.setItem("cookiesAccepted", "true");
+        cookieModal.hide();
+    });
+});
+
+
+// Funzione per impostare un cookie
+function setCookie(name, value, days) {
+    let date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    document.cookie = `${name}=${value}; expires=${date.toUTCString()}; path=/`;
 }
-moon.addEventListener("click", function () {
-    this.classList.add("d-none");
-    sun.classList.remove("d-none");
-    themeChange(bgLight, "bg-darkgrey", "bg-white")
-    themeChange(progressBar, "bg-white", "bg-darkgrey")
-    themeChange(darkgreyText, "text-white", "text-darkgrey")
-    themeChange(colorChange3, "color-change5", "color-change3")
-    themeChange(colorChange2, "color-change4", "color-change2")
 
-})
+// Funzione per ottenere un cookie
+function getCookie(name) {
+    let cookies = document.cookie.split("; ");
+    for (let cookie of cookies) {
+        let [key, value] = cookie.split("=");
+        if (key === name) {
+            return value;
+        }
+    }
+    return null;
+}
 
-sun.addEventListener("click", function () {
-    this.classList.add("d-none")
-    moon.classList.remove("d-none")
-    themeChange(bgLight, "bg-white", "bg-darkgrey")
-    themeChange(progressBar, "bg-darkgrey", "bg-white")
-    themeChange(darkgreyText, "text-darkgrey", "text-white")
-    themeChange(colorChange3, "color-change3", "color-change5")
-    themeChange(colorChange2, "color-change2", "color-change4")
-
-})
 // Inizializza Email.js con le tue credenziali API
 emailjs.init("user_L4nfiowxPEOb4DM8LyTtv");
-
 // Funzione per impostare un cookie
 function setCookie(name, value, hours) {
     let date = new Date();
@@ -166,16 +201,23 @@ async function loadTranslation(language) {
                 }
             }
         });
+
+        // Salva la lingua nei cookie per 30 giorni
+        setCookie("selectedLanguage", language, 30);
     } catch (error) {
         console.error("Errore nel caricamento delle traduzioni:", error);
     }
 }
+
+// Controlla se c'è una lingua salvata nei cookie e la imposta
+document.addEventListener("DOMContentLoaded", () => {
+    const savedLanguage = getCookie("selectedLanguage") || "en"; // Default "en"
+    languageSelector.value = savedLanguage;
+    loadTranslation(savedLanguage);
+});
 
 // Event listener per il cambio lingua
 languageSelector.addEventListener("change", () => {
     const selectedLanguage = languageSelector.value;
     loadTranslation(selectedLanguage);
 });
-
-// Carica la lingua di default (inglese)
-loadTranslation("en");

@@ -30,5 +30,9 @@
         "other": "Altro",
         "message": "Messaggio: ",
         "submit": "Invia messaggio: "
+    },
+    "cookie": {
+        "message": "🍪 Questo sito utilizza i cookie per migliorare l'esperienza utente.",
+        "btn": "Accetto"
     }
 }
