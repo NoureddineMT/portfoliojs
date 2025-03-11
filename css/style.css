@@ -395,3 +395,31 @@ a {
     box-shadow: #222 1px 0 10px;
     text-decoration: underline;
 }
+@media (max-width: 768px) {
+    .h2-purple,
+    .h2-white,
+    .h2-darkgrey {
+        font-size: 2rem;
+    }
+
+    .h3-purple,
+    .h3-white,
+    .h3-darkgrey {
+        font-size: 1.8rem;
+    }
+
+    .name {
+        font-size: 3rem;
+    }
+
+    .job,
+    .job1 {
+        font-size: 2rem;
+    }
+    .title-potfolio {
+        font-size: 2.5rem;
+    }
+    .btn-purple{
+        width: 20%;
+    }
+}
