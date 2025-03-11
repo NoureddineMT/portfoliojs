@@ -395,6 +395,19 @@ a {
     box-shadow: #222 1px 0 10px;
     text-decoration: underline;
 }
+.recaptcha-container {
+    display: flex;
+    justify-content: center;
+    transform: scale(0.9); /* Riduce leggermente il CAPTCHA */
+    transform-origin: center;
+}
+
+@media (max-width: 400px) {
+    .recaptcha-container {
+        transform: scale(0.8); /* Riduci ancora di più su schermi molto piccoli */
+    }
+}
+
 @media (max-width: 768px) {
     .h2-purple,
     .h2-white,

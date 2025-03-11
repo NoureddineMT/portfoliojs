@@ -83,7 +83,7 @@
                 <h2 data-translate="about.name" class="h2-darkgrey color-change2 text-center">test</h2>
                 <div class="d-flex justify-content-center"><a data-translate="about.link" type="button"
                         href="img/pdf/dev_web_NMT.pdf" target="_blank" class="btn btn-purple p-2">CV</a></div>
-                <div class="row p-5  align-items-center">
+                <div class="row p-5 m-0 align-items-center">
                     <div class="col-12 col-lg-7 d-flex align-items-center justify-content-center">
                         <div class="row col-12 justify-content-center align-items-center">
                             <div class="col-8 col-lg-4">
@@ -246,10 +246,9 @@
                                     <textarea class="form-control" id="message" name="message" rows="4"
                                         placeholder="Hola..." required></textarea>
                                 </div>
-                                <div class="mb-3 text-center">
-                                    <div class="g-recaptcha" data-sitekey="6LdV9-0qAAAAAAo-a1d0IdmrZ8quS0aYzheMc49z">
-                                    </div>
-                                </div>
+                                <div class="mb-3 text-center recaptcha-container">
+                                    <div class="g-recaptcha" data-sitekey="6LdV9-0qAAAAAAo-a1d0IdmrZ8quS0aYzheMc49z"></div>
+                                </div>                                
                                 <div class="d-grid">
                                     <button data-translate="contact.submit" type="button" id="sendButton"
                                         class="btn btn-primary fw-semibold" onclick="sendEmail()">Send Message</button>
