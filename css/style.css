@@ -171,8 +171,6 @@ a {
 
 .job1 {
     font-size: 3rem;
-    position: relative;
-    animation: mymove 5s infinite;
 }
 
 .avatar:hover {
@@ -273,19 +271,6 @@ a {
     animation: changeColor5 3s infinite;
 }
 
-@keyframes mymove {
-    0% {
-        left: 0px;
-    }
-
-    50% {
-        left: 50px;
-    }
-
-    100% {
-        left: 0px;
-    }
-}
 
 /* * second section */
 .bg-img {

@@ -40,22 +40,26 @@
                             <a class="nav-link hover font-lg ps-1" href="#contact">Contact</a>
                         </li>
                     </ul>
-                    <div class="language-container me-2">
-                        <select id="language-selector" class="form-select2">
-                            <option value="en">English</option>
-                            <option value="fr">Français</option>
-                            <option value="it">Italiano</option>
-                        </select>
-                    </div>
-                    <div class="bg-purple rounded-pill d-flex justify-content-around p-2 mode-toggle">
-                        <ul class="list-style-none row m-0">
-                            <li id="sun" class="col-6 d-none">
-                                <i class="fa-solid fa-sun text-white"></i>
-                            </li>
-                            <li id="moon" class="col-6">
-                                <i class="fa-solid fa-moon text-white"></i>
-                            </li>
-                        </ul>
+                    <div class="row justify-content-center">
+                        <div class="language-container col-lg-8 row justify-content-center me-2">
+                            <div class="col-md-3 ms-4 ms-lg-0 text-center col-lg-12">
+                                <select id="language-selector" class="form-select2">
+                                    <option value="en">English</option>
+                                    <option value="fr">Français</option>
+                                    <option value="it">Italiano</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bg-purple rounded-pill col-lg-4 d-flex justify-content-around p-2 mode-toggle">
+                            <ul class="list-style-none row m-0">
+                                <li id="sun" class="col-6 d-none">
+                                    <i class="fa-solid fa-sun text-white"></i>
+                                </li>
+                                <li id="moon" class="col-6">
+                                    <i class="fa-solid fa-moon text-white"></i>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,7 +80,7 @@
         <section class="d-flex align-items-center justify-content-center bg-white h-page pt-3 " id="about">
             <div class="container shadow-card p-1">
                 <h3 data-translate="about.title" class="h3-purple color-change3 text-center p-1">Who is </h3>
-                <h2 data-translate="about.name" class="h2-darkgrey color-change2 text-center">Noureddine MOUATAMID</h2>
+                <h2 data-translate="about.name" class="h2-darkgrey color-change2 text-center">test</h2>
                 <div class="d-flex justify-content-center"><a data-translate="about.link" type="button"
                         href="img/pdf/dev_web_NMT.pdf" target="_blank" class="btn btn-purple p-2">CV</a></div>
                 <div class="row p-5  align-items-center">
@@ -88,8 +92,8 @@
                             <div class="col-12 col-lg-8 mt-5 mt-lg-0">
                                 <ul>
                                     <li class="list-style-none text-darkgrey fw-bolder">Nom & Prénom :
-                                        <span class="text-darkgrey fw-lighter">
-                                            Mouatamid Noureddine
+                                        <span data-translate="about.name" class="text-darkgrey fw-lighter">
+                                            test
                                         </span>
                                     </li>
                                     <li class="list-style-none text-darkgrey">Profile :
@@ -99,42 +103,62 @@
                                     </li>
                                     <li class="list-style-none text-darkgrey">Phone :
                                         <span class="text-darkgrey">
-                                            0609552594
+                                            065547478
                                         </span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="col-12 pt-5 align-items-center">
                                 <h4 data-translate="about.skills" class="h4-purple">Skills : </h4>
-                                <h5 class="h5-darkgrey text-darkgrey pt-2">Html&Css : </h5>
-                                <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                    aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <div class="progress-bar bg-purple" style="width: 90%">90%</div>
-                                </div>
-                                <h5 class="h5-darkgrey text-darkgrey pt-2">JS : </h5>
-                                <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                    aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <div class="progress-bar bg-purple" style="width: 95%">95%</div>
-                                </div>
-                                <h5 class="h5-darkgrey text-darkgrey pt-2">PHP : </h5>
-                                <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                    aria-label="Example with label" aria-valuenow="90" aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <div class="progress-bar bg-purple" style="width: 90%">90%</div>
-                                </div>
-                                <h5 class="h5-darkgrey text-darkgrey pt-2">Wordpress : </h5>
-                                <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                    aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <div class="progress-bar bg-purple" style="width: 100%">100%</div>
-                                </div>
-                                <h5 class="h5-darkgrey text-darkgrey pt-2">MySql : </h5>
-                                <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                    aria-label="Example with label" aria-valuenow="90" aria-valuemin="0"
-                                    aria-valuemax="100">
-                                    <div class="progress-bar bg-purple" style="width: 90%">90%</div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h5 class="h5-darkgrey text-darkgrey pt-2">Html&Css : </h5>
+                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
+                                            aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress-bar bg-purple" style="width: 100%">100%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="h5-darkgrey text-darkgrey pt-2">JS : </h5>
+                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
+                                            aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress-bar bg-purple" style="width: 95%">95%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="h5-darkgrey text-darkgrey pt-2">PHP : </h5>
+                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
+                                            aria-label="Example with label" aria-valuenow="90" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress-bar bg-purple" style="width: 90%">90%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="h5-darkgrey text-darkgrey pt-2">Wordpress : </h5>
+                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
+                                            aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress-bar bg-purple" style="width: 100%">100%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="h5-darkgrey text-darkgrey pt-2">MySql : </h5>
+                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
+                                            aria-label="Example with label" aria-valuenow="90" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress-bar bg-purple" style="width: 90%">90%</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <h5 class="h5-darkgrey text-darkgrey pt-2">Symfony : </h5>
+                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
+                                            aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
+                                            aria-valuemax="100">
+                                            <div class="progress-bar bg-purple" style="width: 100%">100%</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +167,8 @@
                         <h3 data-translate="about.secondTitle" class="h3-purple mt-3 mt-lg-1">About me</h3>
                         <p data-translate="about.description"
                             class="text-darkgrey d-flex align-items-center text-center text-lg-start pt-2">
-                            Je suis Noureddine MOUATAMID, un jeune de vingt-trois ans passionné par le monde de la
+                            Je suis <span data-translate="about.name">test</span>, un jeune de vingt-trois ans passionné
+                            par le monde de la
                             technologie et du développement professionnel. Actuellement, je réside dans la magnifique
                             ville de Cannes, où je suis engagé dans un parcours de formation professionnelle à l'AFPA.
                             Mon objectif est d'obtenir un diplôme professionnel de niveau bac +2.
@@ -235,12 +260,12 @@
                 </div>
             </div>
         </section>
-        <!-- Modal per i Cookie -->
         <div id="cookie-modal" class="modal fade" tabindex="-1" aria-labelledby="cookie-modal-label" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title text-center text-dark" id="cookie-modal-label" data-translate="cookie.title">
+                        <h5 class="modal-title text-center text-dark" id="cookie-modal-label"
+                            data-translate="cookie.title">
                             🍪🛑
                         </h5>
                     </div>
