@@ -17,9 +17,11 @@
         "titleCar": "Site Voiture",
         "descriptionCar": "Page d'accueil d'un simple site de vente de voitures utilisant JavaScript, HTML, CSS",
         "titleKit": "Kit de batterie interactif avec jQuery",
-        "descriptionKit": "Ce code crée un kit de batterie virtuel en utilisant HTML, CSS et JavaScript (avec jQuery). L'utilisateur peut jouer des percussions soit en cliquant sur les boutons avec la souris, soit en appuyant sur les touches correspondantes du clavier.",
+        "descriptionKit": "Ce code crée un kit de batterie virtuel en utilisant HTML, CSS et JavaScript (avec jQuery).",
         "titleTmdb": "NMT Films : Moteur de recherche pour films et séries TV",
-        "descriptionTmdb": "Ce code implémente un moteur de recherche pour films et séries TV, utilisant Bootstrap pour le style et jQuery + Fetch API pour récupérer les données depuis The Movie Database (TMDb).",
+        "descriptionTmdb": "Ce code implémente un moteur de recherche pour films et séries TV.",
+        "titleKiller": "Jeu de survie avec Jason",
+        "descriptionKiller": "Le code simule un affrontement entre Jason et un groupe de survivants avec des compétences aléatoires.",
         "github": "Github",
         "visit_site": "Visiter le site"
     },
