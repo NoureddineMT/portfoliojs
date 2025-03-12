@@ -15,7 +15,13 @@
     },
     "portfolio": {
         "titleCar": "Sito Auto",
-        "description": "Homepage di un semplice sito di vendita di auto usando JavaScript, HTML, CSS",
+        "descriptionCar": "Homepage di un semplice sito di vendita di auto usando JavaScript, HTML, CSS",
+        "titleKit": "Drum Kit Interattivo con jQuery",
+        "descriptionKit": "Questo codice crea un Drum Kit virtuale utilizzando HTML, CSS e JavaScript (con jQuery). L'utente può suonare i tamburi sia cliccando sui pulsanti con il mouse sia premendo i tasti corrispondenti sulla tastiera.",
+        "titleTmdb": "NMT Films: Motore di Ricerca per Film e Serie TV",
+        "descriptionTmdb": "Questo codice implementa un motore di ricerca per film e serie TV, utilizzando Bootstrap per lo stile e jQuery + Fetch API per recuperare i dati da The Movie Database (TMDb).",
+        "titleKiller": "Gioco di Sopravvivenza con Jason",
+        "descriptionKiller": "Il codice simula uno scontro tra Jason e un gruppo di sopravvissuti con abilità casuali. Ogni turno, in base a probabilità predefinite, un sopravvissuto può infliggere danni, morire o sacrificarsi mentre colpisce Jason. Il gioco termina quando Jason viene sconfitto o elimina tutti i sopravvissuti, aggiornando il punteggio e la cronologia degli eventi.",
         "github": "Github",
         "visit_site": "Visita il sito"
     },

@@ -16,7 +16,13 @@
     },
     "portfolio": {
         "titleCar": "Car Website",
-        "description": "Homepage of a simple car sales website using JavaScript, HTML, CSS",
+        "descriptionCar": "Homepage of a simple car sales website using JavaScript, HTML, CSS",
+        "titleKit": "Interactive Drum Kit with jQuery",
+        "descriptionKit": "This code creates a virtual drum kit using HTML, CSS, and JavaScript (with jQuery).",
+        "titleTmdb": "NMT Films: Search Engine for Movies and TV Series",
+        "descriptionTmdb": "This code implements a search engine for movies and TV series.",
+        "titleKiller": "Survival Game with Jason",
+        "descriptionKiller": "The code simulates a battle between Jason and a group of survivors with random skills.",
         "github": "Github",
         "visit_site": "Visit Site"
     },
