@@ -408,6 +408,13 @@ a {
     }
 }
 
+@media (max-width: 991px) { 
+    .row {
+        --bs-gutter-x: 0 !important;
+    }
+}
+
+
 @media (max-width: 768px) {
     .h2-purple,
     .h2-white,
