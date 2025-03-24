@@ -22,6 +22,8 @@
         "descriptionTmdb": "Ce code implémente un moteur de recherche pour films et séries TV.",
         "titleKiller": "Jeu de survie avec Jason",
         "descriptionKiller": "Le code simule un affrontement entre Jason et un groupe de survivants avec des compétences aléatoires.",
+        "titleLms": "Symfony: LMS",
+        "descriptionLms": "J'ai créé un site permettant de gérer une plateforme d'apprentissage en ligne en utilisant Symfony",
         "github": "Github",
         "visit_site": "Visiter le site"
     },

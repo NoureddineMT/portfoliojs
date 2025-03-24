@@ -221,3 +221,26 @@ languageSelector.addEventListener("change", () => {
     const selectedLanguage = languageSelector.value;
     loadTranslation(selectedLanguage);
 });
+
+const circle = document.querySelector(".circle");
+let mouseX = 0, mouseY = 0;
+let circleX = 0, circleY = 0;
+let speed = 0.1; // Velocità di inseguimento
+
+document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+function animate() {
+    // Movimento fluido con interpolazione
+    circleX += (mouseX - circleX) * speed;
+    circleY += (mouseY - circleY) * speed;
+
+    // Offset per centrare il mouse
+    circle.style.transform = `translate(${circleX - 25}px, ${circleY - 25}px)`;
+
+    requestAnimationFrame(animate);
+}
+
+animate();

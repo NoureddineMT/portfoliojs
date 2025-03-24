@@ -12,7 +12,6 @@
         "description": "I am Noureddine MOUATAMID, a twenty-four-year-old passionate about technology and professional development. Currently, I live in the beautiful city of Cannes, where I am pursuing a vocational training program at AFPA. My goal is to obtain a Bac+2 level professional diploma. Since childhood, I have developed a deep interest in technology and its impact on our way of life and work. My current training allows me to acquire advanced skills and specialized knowledge that will prepare me for future challenges and opportunities in the field I love",
         "link": "img/pdf/dev_web_NMT_en.pdf",
         "skills": "Skills"
-        
     },
     "portfolio": {
         "titleCar": "Car Website",
@@ -23,6 +22,8 @@
         "descriptionTmdb": "This code implements a search engine for movies and TV series.",
         "titleKiller": "Survival Game with Jason",
         "descriptionKiller": "The code simulates a battle between Jason and a group of survivors with random skills.",
+        "titleLms": "Symfony: LMS",
+        "descriptionLms": "I have created a website that manages an online learning platform using Symfony",
         "github": "Github",
         "visit_site": "Visit Site"
     },
