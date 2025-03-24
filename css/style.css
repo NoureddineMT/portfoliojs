@@ -416,6 +416,11 @@ a {
     pointer-events: none; 
     z-index: 9999; 
 }
+@media (max-width: 768px) {
+    .circle {
+        display: none;
+    }
+}
 
 @media (max-width: 400px) {
     .recaptcha-container {
