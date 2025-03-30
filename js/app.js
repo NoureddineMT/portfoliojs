@@ -113,79 +113,60 @@ function checkEmailSent() {
 
 // Funzione per inviare l'email
 function sendEmail() {
-    const fromName = document.getElementById('from_name').value;
-    const email = document.getElementById('email').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    const feedbackAlert = document.getElementById('form-feedback');
-    const feedbackMessage = document.getElementById('feedback-message');
+    let sendButton = document.querySelector("#sendButton");
+    let recaptchaResponse = grecaptcha.getResponse();
 
-    // Verifica campi obbligatori
-    if (!fromName || !email || !subject || !message) {
-        feedbackAlert.classList.remove('d-none', 'alert-success');
-        feedbackAlert.classList.add('alert-danger');
-        feedbackMessage.innerText = 'Per favore, compila tutti i campi richiesti.';
+    if (!recaptchaResponse) {
+        alert("Please complete the CAPTCHA before sending the message.");
         return;
     }
 
-    // Verifica validità email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        feedbackAlert.classList.remove('d-none', 'alert-success');
-        feedbackAlert.classList.add('alert-danger');
-        feedbackMessage.innerText = 'Per favore, inserisci un indirizzo email valido.';
-        return;
-    }
-
-    // Verifica reCAPTCHA
-    const recaptchaResponse = grecaptcha.getResponse();
-    if (!recaptchaResponse.length) {
-        feedbackAlert.classList.remove('d-none', 'alert-success');
-        feedbackAlert.classList.add('alert-danger');
-        feedbackMessage.innerText = 'Per favore, completa la verifica reCAPTCHA.';
-        return;
-    }
-
-    // Disabilita il pulsante durante l'invio
-    const sendButton = document.getElementById('sendButton');
-    const originalButtonText = sendButton.innerHTML;
+    // Disabilita il pulsante per evitare spam
     sendButton.disabled = true;
-    sendButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Invio in corso...';
+    sendButton.innerText = "Sending...";
 
-    // Imposta i parametri dell'email
-    const templateParams = {
-        from_name: fromName,
-        email: email,
-        subject: subject,
-        message: message
+    let data = {
+        from_name: document.getElementById("from_name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value,
+        "g-recaptcha-response": recaptchaResponse
     };
 
-    // Invia l'email
-    emailjs.send('service_lqfv46f', 'template_dnxwwsr', templateParams)
-        .then(function () {
-            // Mostra feedback positivo
-            feedbackAlert.classList.remove('d-none', 'alert-danger');
-            feedbackAlert.classList.add('alert-success');
-            feedbackMessage.innerText = 'Grazie! Il tuo messaggio è stato inviato con successo.';
+    emailjs.send("service_lqfv46f", "template_dnxwwsr", data)
+        .then(response => {
+            console.log("Email inviata con successo:", response);
 
-            // Resetta il form
-            document.getElementById('contactForm').reset();
+            // Imposta il cookie per bloccare il pulsante per 24 ore
+            setCookie("emailSent", "true", 24);
+
+            // Mostra il messaggio di conferma
+            let successMessage = document.createElement("div");
+            successMessage.className = "alert alert-success mt-3";
+            successMessage.innerText = "Your message has been sent successfully!";
+            document.getElementById("contactForm").appendChild(successMessage);
+
+            // Reset del form e CAPTCHA
+            document.getElementById("contactForm").reset();
             grecaptcha.reset();
 
-            // Ripristina il pulsante
-            sendButton.disabled = false;
-            sendButton.innerHTML = originalButtonText;
-        }, function (error) {
-            // Mostra feedback negativo
-            feedbackAlert.classList.remove('d-none', 'alert-success');
-            feedbackAlert.classList.add('alert-danger');
-            feedbackMessage.innerText = 'Si è verificato un errore durante l\'invio del messaggio. Riprova più tardi.';
+            // Disabilita il pulsante fino a quando non scade il cookie
+            sendButton.innerText = "You have to wait 24 hours";
+        })
+        .catch(error => {
+            console.error("Errore durante l'invio dell'email:", error);
 
-            // Ripristina il pulsante
-            sendButton.disabled = false;
-            sendButton.innerHTML = originalButtonText;
+            let errorMessage = document.createElement("div");
+            errorMessage.className = "alert alert-danger mt-3";
+            errorMessage.innerText = "Failed to send message. Please try again.";
+            document.getElementById("contactForm").appendChild(errorMessage);
 
-            console.log('Error:', error);
+            // Riattiva il pulsante dopo 3 secondi
+            setTimeout(() => {
+                sendButton.disabled = false;
+                sendButton.innerText = "Send Message";
+                errorMessage.remove();
+            }, 3000);
         });
 }
 
