@@ -161,7 +161,7 @@ function sendEmail() {
     };
 
     // Invia l'email
-    emailjs.send('service_lqfv46f', 'template_crbpshk', templateParams)
+    emailjs.send('service_lqfv46f', 'template_dnxwwsr', templateParams)
         .then(function () {
             // Mostra feedback positivo
             feedbackAlert.classList.remove('d-none', 'alert-danger');
