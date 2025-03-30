@@ -11,6 +11,7 @@
         "link": "img/pdf/dev_web_NMT_it.pdf",
         "description": "Sono Noureddine MOUATAMID, un giovane di ventiquattro anni appassionato di tecnologia e sviluppo professionale. Attualmente vivo nella splendida città di Cannes, dove sto seguendo un percorso di formazione professionale presso l'AFPA. Il mio obiettivo è ottenere un diploma professionale di livello Bac+2. Fin da piccolo ho sviluppato un grande interesse per la tecnologia e il suo impatto sul nostro stile di vita e sul mondo del lavoro. La mia attuale formazione mi offre l'opportunità di acquisire competenze avanzate e conoscenze specializzate che mi prepareranno alle sfide e alle opportunità future nel settore che amo",
         "secondTitle": "Chi sono",
+        "email": "Clicca per visualizzare l'email",
         "skills": "Competenze"
     },
     "portfolio": {
@@ -37,7 +38,9 @@
         "subjectFreelance": "Progetto freelance",
         "other": "Altro",
         "message": "Messaggio: ",
-        "submit": "Invia messaggio: "
+        "submit": "Invia messaggio",
+        "phone": "Telefono: ",
+        "location": "Località: "
     },
     "cookie": {
         "message": "🍪 Questo sito utilizza i cookie per migliorare l'esperienza utente.",
