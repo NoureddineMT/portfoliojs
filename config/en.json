@@ -15,6 +15,7 @@
         "skills": "Skills"
     },
     "portfolio": {
+        "sectionTitle": "Portfolio",
         "titleCar": "Car Website",
         "descriptionCar": "Homepage of a simple car sales website using JavaScript, HTML, CSS",
         "titleKit": "Interactive Drum Kit with jQuery",
@@ -40,7 +41,9 @@
         "message": "Message: ",
         "submit": "Send Message",
         "phone": "Phone: ",
-        "location": "Location: "
+        "location": "Location: ",
+        "contactInfo": "Contact Information",
+        "socialLinks": "Social Links"
     },
     "cookie": {
         "message": "🍪 This site uses cookies to enhance the user experience.",

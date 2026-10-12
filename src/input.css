@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+/* Il tema scuro è attivato manualmente con la classe "dark" su <html>
+   (vedi js/app.js), non solo dalla preferenza di sistema. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source "../index.html";
+@source "../js/app.js";
+
+@theme {
+    --font-sans: "Poppins", sans-serif;
+
+    /* Viola di brand: usato per testo/sfondi solidi, ha un contrasto
+       verificato con il bianco a partire dalla tonalità 500. */
+    --color-primary-50: #f2f2fc;
+    --color-primary-100: #e4e4f9;
+    --color-primary-200: #c9cbf2;
+    --color-primary-300: #a7a9e8;
+    --color-primary-400: #8588e0;
+    --color-primary-500: #676cdb;
+    --color-primary-600: #5458c2;
+    --color-primary-700: #41449b;
+    --color-primary-800: #2f3180;
+    --color-primary-900: #262865;
+
+    /* Accento rosa: le tonalità usate come testo/bottone sono tenute
+       scure abbastanza da restare leggibili in bianco su tutto il gradiente. */
+    --color-accent-400: #f472b6;
+    --color-accent-500: #e8337f;
+    --color-accent-600: #c81e68;
+    --color-accent-700: #a01555;
+
+    --animate-float: float 10s ease-in-out infinite;
+    --animate-bounce-slow: bounce 2.4s infinite;
+
+    --shadow-soft: 0 10px 30px -5px rgb(24 24 27 / 0.12);
+    --shadow-soft-lg: 0 25px 60px -10px rgb(24 24 27 / 0.25);
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, -30px);
+    }
+}
+
+@layer base {
+    html {
+        scroll-padding-top: 6rem;
+    }
+
+    ::selection {
+        background-color: var(--color-primary-500);
+        color: #fff;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--color-primary-500);
+        border-radius: 10px;
+    }
+}
+
+@layer components {
+
+    /* Testo "a contorno" riservato al titolo grande dell'hero: a quella
+       dimensione il contrasto va valutato come testo "large", dove il
+       bianco sullo sfondo scuro passa ampiamente la soglia WCAG. */
+    .hero-outline {
+        color: transparent;
+        -webkit-text-stroke: 2px white;
+        text-stroke: 2px white;
+    }
+
+    .nav-link-custom {
+        @apply relative pb-1 text-white/90 transition-colors duration-200 hover:text-white after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-to-r after:from-primary-400 after:to-accent-400 after:transition-all after:duration-300 hover:after:w-full;
+    }
+
+    #site-nav.nav-scrolled {
+        @apply bg-zinc-950/70 shadow-soft backdrop-blur-lg;
+    }
+
+    /* I bottoni a gradiente usano sempre tonalità >= 600 ad entrambi gli
+       estremi: il testo bianco resta leggibile (oltre 4.5:1 su tutto il
+       gradiente), a differenza della versione precedente che sfumava fino
+       a un rosa troppo chiaro per il bianco sopra. */
+    .btn-gradient {
+        @apply inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-6 py-3 font-semibold text-white shadow-soft transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500 disabled:pointer-events-none disabled:opacity-60;
+    }
+
+    .btn-gradient-sm {
+        @apply inline-flex items-center justify-center gap-1.5 rounded-full bg-gradient-to-r from-primary-600 to-accent-600 px-4 py-2 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-500;
+    }
+
+    /* Chip con coppie di colori sicure (primary-50/700 in chiaro,
+       primary-400/200 in scuro): niente testo su sfondo sfumato. */
+    .chip {
+        @apply inline-flex items-center rounded-full border border-primary-200 bg-primary-50 px-2.5 py-0.5 text-xs font-semibold text-primary-700 dark:border-primary-400/30 dark:bg-primary-400/10 dark:text-primary-200;
+    }
+
+    .card-surface {
+        @apply rounded-3xl border border-zinc-200 bg-white shadow-soft dark:border-white/10 dark:bg-zinc-900;
+    }
+
+    .card-portfolio {
+        @apply overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-soft transition-all duration-300 hover:-translate-y-2 hover:shadow-soft-lg dark:border-white/10 dark:bg-zinc-900;
+    }
+
+    .card-portfolio img {
+        @apply transition-transform duration-500;
+    }
+
+    .card-portfolio:hover img {
+        @apply scale-105;
+    }
+
+    .form-input {
+        @apply w-full rounded-xl border border-zinc-300 bg-zinc-50 px-4 py-3 text-zinc-900 transition focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/30 dark:border-white/10 dark:bg-zinc-800 dark:text-zinc-100 dark:focus:bg-zinc-800;
+    }
+
+    .skill-track {
+        @apply h-2.5 w-full overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-700;
+    }
+
+    .skill-fill {
+        @apply h-full rounded-full bg-gradient-to-r from-primary-500 to-accent-600;
+    }
+
+    .reveal {
+        @apply transition-all duration-700 ease-out;
+    }
+
+    /* Il contenuto resta sempre visibile di default: l'animazione si attiva
+       solo se il JS aggiunge "reveal-ready" a <html>, così niente dipende
+       dal JS per essere leggibile. */
+    html.reveal-ready .reveal {
+        opacity: 0;
+        transform: translateY(2rem);
+    }
+
+    html.reveal-ready .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

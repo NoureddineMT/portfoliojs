@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://noureddinemt.github.io/sitemap.xml

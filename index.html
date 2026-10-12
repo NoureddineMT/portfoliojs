@@ -1,425 +1,490 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio di Noureddine Mouatamid, sviluppatore web full stack specializzato in HTML, CSS, JavaScript, PHP e Symfony">
-    <meta name="keywords" content="sviluppatore web, full stack, portfolio, Noureddine Mouatamid, PHP, JavaScript, Symfony">
+    <meta name="description" content="Portfolio of Noureddine Mouatamid, full stack web developer specialized in HTML, CSS, JavaScript, PHP and Symfony">
+    <meta name="keywords" content="web developer, full stack, portfolio, Noureddine Mouatamid, PHP, JavaScript, Symfony">
     <meta name="author" content="Noureddine Mouatamid">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Noureddine Mouatamid - Sviluppatore Web Full Stack">
-    <meta property="og:description" content="Portfolio di Noureddine Mouatamid, sviluppatore web full stack specializzato in HTML, CSS, JavaScript, PHP e Symfony">
+    <meta name="theme-color" content="#676cdb">
+    <link rel="canonical" href="https://noureddinemt.github.io">
+    <meta property="og:title" content="Noureddine Mouatamid - Full Stack Web Developer">
+    <meta property="og:description" content="Portfolio of Noureddine Mouatamid, full stack web developer specialized in HTML, CSS, JavaScript, PHP and Symfony">
     <meta property="og:image" content="img/png/logo-no-background.png">
     <meta property="og:url" content="https://noureddinemt.github.io">
     <meta property="og:type" content="website">
-    
+    <meta property="og:locale" content="en_US">
+
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="img/png/logo-no-background.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/png/logo-no-background.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/png/logo-no-background.png">
     <link rel="shortcut icon" href="img/png/logo-no-background.png">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <title>Noureddine Mouatamid | Sviluppatore Web Full Stack</title>
-    <link rel="stylesheet" href="css/style.css">
+
+    <title>Noureddine Mouatamid | Full Stack Web Developer</title>
+    <link rel="stylesheet" href="css/tailwind.css">
 </head>
 
-<body>
-    <header class="fixed-top">
-        <nav class="navbar navbar-expand-lg bg-invisible">
-            <div class="container">
-                <a class="wlogoImg" href="#">
-                    <img class="wlogoImg" src="img/png/logo-no-background.png" alt="Logo">
+<body class="overflow-x-hidden bg-zinc-50 font-sans text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100">
+    <header class="fixed inset-x-0 top-0 z-50">
+        <nav id="site-nav" class="transition-all duration-300">
+            <div class="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4 py-3">
+                <a href="#" class="shrink-0">
+                    <img src="img/png/logo-no-background.png" alt="Logo" class="h-10 w-auto md:h-12">
                 </a>
-                <button class="navbar-toggler bg-purple" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+
+                <button id="nav-toggler" type="button" aria-controls="nav-menu" aria-expanded="false"
+                    aria-label="Toggle navigation"
+                    class="inline-flex items-center justify-center rounded-full bg-primary-600 p-3 text-white lg:hidden">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
-                        <li class="nav-item p-1">
-                            <a class="nav-link hover font-lg ps-1" href="#about">About</a>
-                        </li>
-                        <li class="nav-item p-1">
-                            <a class="nav-link hover font-lg ps-1" href="#portfolio">Portfolio</a>
-                        </li>
-                        <li class="nav-item p-1">
-                            <a class="nav-link hover font-lg ps-1" href="#contact">Contact</a>
-                        </li>
+
+                <div id="nav-menu"
+                    class="hidden w-full flex-col items-center gap-4 lg:flex lg:w-auto lg:flex-1 lg:flex-row lg:items-center lg:justify-between">
+                    <ul class="flex flex-col items-center gap-4 text-center lg:flex-row lg:gap-8 lg:pl-10">
+                        <li><a href="#about" class="nav-link-custom">About</a></li>
+                        <li><a href="#portfolio" class="nav-link-custom">Portfolio</a></li>
+                        <li><a href="#contact" class="nav-link-custom">Contact</a></li>
                     </ul>
-                    <div class="row justify-content-center">
-                        <div class="language-container col-lg-8 row justify-content-center me-2">
-                            <div class="col-md-3 ms-4 ms-lg-0 text-center col-lg-12">
-                                <select id="language-selector" class="form-select2">
-                                    <option value="en">English</option>
-                                    <option value="fr">Français</option>
-                                    <option value="it">Italiano</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="bg-purple rounded-pill col-lg-4 d-flex justify-content-around p-2 mode-toggle">
-                            <ul class="list-style-none row m-0">
-                                <li id="sun" class="col-6 d-none">
-                                    <i class="fa-solid fa-sun text-white"></i>
-                                </li>
-                                <li id="moon" class="col-6">
-                                    <i class="fa-solid fa-moon text-white"></i>
-                                </li>
-                            </ul>
+
+                    <div class="flex items-center gap-3">
+                        <select id="language-selector" aria-label="Select language"
+                            class="cursor-pointer rounded-full border border-white/25 bg-white/10 px-4 py-1.5 text-sm font-semibold text-white outline-none transition hover:bg-white/20 focus-visible:ring-2 focus-visible:ring-accent-400">
+                            <option value="en" class="text-zinc-900">English</option>
+                            <option value="fr" class="text-zinc-900">Français</option>
+                            <option value="it" class="text-zinc-900">Italiano</option>
+                        </select>
+
+                        <div class="flex items-center gap-1 rounded-full border border-white/25 bg-white/10 p-1">
+                            <button id="sun" type="button" aria-label="Switch to light mode"
+                                class="hidden rounded-full p-2 text-white transition hover:scale-110">
+                                <i class="fa-solid fa-sun"></i>
+                            </button>
+                            <button id="moon" type="button" aria-label="Switch to dark mode"
+                                class="rounded-full p-2 text-white transition hover:scale-110">
+                                <i class="fa-solid fa-moon"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
-    <main>
-        <div class="circle"></div>
-        <section class="vh-100 bg-img" id="home">
-            <div class="vh-100 d-flex justify-content-center align-items-center bg-semipurple">
-                <div class="container">
-                    <h2 data-translate="home.title" class="text-center title-potfolio">Noureddine MOUATAMID</h2>
-                    <h4 class="text-center">
-                        <span data-translate="home.role" class="job title-potfolio">Developpeur </span>
-                        <span data-translate="home.role2" class="job1 title-potfolio">web</span>
-                    </h4>
-                </div>
+
+    <main class="overflow-x-hidden">
+        <div id="cursor-circle"
+            class="pointer-events-none fixed z-[9999] hidden h-10 w-10 rounded-full border-2 border-primary-500 mix-blend-difference md:block">
+        </div>
+
+        <section id="home"
+            class="relative flex min-h-screen items-center justify-center overflow-hidden bg-[url('../img/png/spacr.jpg')] bg-cover bg-center bg-fixed">
+            <div class="absolute inset-0 bg-gradient-to-b from-primary-500/15 via-transparent to-zinc-950/70"></div>
+
+            <div
+                class="absolute -left-20 top-16 h-72 w-72 rounded-full bg-primary-500/60 blur-[90px] motion-safe:animate-float">
+            </div>
+            <div class="absolute -right-10 bottom-20 h-64 w-64 rounded-full bg-accent-500/60 blur-[90px] motion-safe:animate-float [animation-delay:2s]">
+            </div>
+
+            <div class="relative z-10 mx-auto max-w-3xl px-4 text-center">
+                <h2 data-translate="home.title" class="hero-outline text-5xl font-extrabold sm:text-6xl md:text-7xl">
+                    Noureddine MOUATAMID</h2>
+                <p class="mt-4 text-2xl font-bold text-white sm:text-3xl">
+                    <span data-translate="home.role">Web</span> <span data-translate="home.role2"
+                        class="bg-gradient-to-r from-primary-300 to-accent-300 bg-clip-text text-transparent">Developer</span>
+                </p>
+            </div>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 text-2xl text-white/80 motion-safe:animate-bounce-slow">
+                <i class="fa-solid fa-chevron-down"></i>
             </div>
         </section>
-        <section class="d-flex align-items-center justify-content-center bg-white h-page pt-3 " id="about">
-            <div class="container shadow-card p-1">
-                <h3 data-translate="about.title" class="h3-purple color-change3 text-center p-1">Who is </h3>
-                <h2 data-translate="about.name" class="h2-darkgrey color-change2 text-center">Noureddine MOUATAMID</h2>
-                <div class="d-flex justify-content-center"><a data-translate="about.link" type="button"
-                        href="img/pdf/dev_web_NMT.pdf" target="_blank" class="btn btn-purple p-2">CV</a></div>
-                <div class="row p-5 m-0 align-items-center">
-                    <div class="col-12 col-lg-7 d-flex align-items-center justify-content-center">
-                        <div class="row col-12 justify-content-center align-items-center">
-                            <div class="col-8 col-lg-4">
-                                <img src="img/png/image.png" class="w-100 rounded-pill">
-                            </div>
-                            <div class="col-12 col-lg-8 mt-5 mt-lg-0">
-                                <ul>
-                                    <li class="list-style-none text-darkgrey fw-bolder">Nom & Prénom :
-                                        <span data-translate="about.name" class="text-darkgrey fw-lighter">
+
+        <section id="about" class="bg-white py-20 dark:bg-zinc-950 md:py-28">
+            <div class="container mx-auto px-4">
+                <div class="reveal mx-auto max-w-5xl rounded-3xl border border-zinc-200 bg-white p-6 shadow-soft dark:border-white/10 dark:bg-zinc-900 sm:p-10">
+                    <p data-translate="about.title" class="text-center text-lg font-semibold text-primary-600 dark:text-primary-300">
+                        Who is</p>
+                    <h2 data-translate="about.name"
+                        class="text-center text-3xl font-extrabold text-zinc-900 dark:text-white sm:text-4xl">
+                        Noureddine MOUATAMID</h2>
+
+                    <div class="mt-4 flex justify-center">
+                        <a data-translate="about.link" href="img/pdf/dev_web_NMT_en.pdf" target="_blank"
+                            rel="noopener noreferrer" class="btn-gradient-sm">CV</a>
+                    </div>
+
+                    <div class="mt-10 grid gap-10 lg:grid-cols-12 lg:items-center">
+                        <div class="lg:col-span-7">
+                            <div class="grid items-center gap-8 sm:grid-cols-[auto_1fr]">
+                                <div
+                                    class="mx-auto h-40 w-40 shrink-0 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 p-1 shadow-soft sm:h-48 sm:w-48">
+                                    <img src="img/png/image1.png" loading="lazy" alt="Noureddine Mouatamid"
+                                        class="h-full w-full rounded-full object-cover">
+                                </div>
+                                <ul class="space-y-2 text-center text-zinc-600 dark:text-zinc-300 sm:text-left">
+                                    <li class="font-bold text-zinc-900 dark:text-white">Nom &amp; Prénom :
+                                        <span data-translate="about.name" class="font-normal text-zinc-600 dark:text-zinc-300">
                                             Noureddine MOUATAMID
                                         </span>
                                     </li>
-                                    <li class="list-style-none text-darkgrey">Profile :
-                                        <span data-translate="about.profile" class="text-darkgrey">
-                                            Full stack developer
-                                        </span>
+                                    <li>Profile :
+                                        <span data-translate="about.profile">Full stack developer</span>
                                     </li>
-                                    <li class="list-style-none text-darkgrey">Phone :
-                                        <span class="text-darkgrey">
-                                            0609552594
-                                        </span>
+                                    <li>Phone :
+                                        <span>0609552594</span>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="col-12 pt-5 align-items-center">
-                                <h4 data-translate="about.skills" class="h4-purple">Skills : </h4>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <h5 class="h5-darkgrey text-darkgrey pt-2">Html&Css : </h5>
-                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                            aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="progress-bar bg-purple" style="width: 100%">100%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5 class="h5-darkgrey text-darkgrey pt-2">JS : </h5>
-                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                            aria-label="Example with label" aria-valuenow="25" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="progress-bar bg-purple" style="width: 95%">95%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5 class="h5-darkgrey text-darkgrey pt-2">PHP : </h5>
-                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                            aria-label="Example with label" aria-valuenow="90" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="progress-bar bg-purple" style="width: 90%">90%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5 class="h5-darkgrey text-darkgrey pt-2">Wordpress : </h5>
-                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                            aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="progress-bar bg-purple" style="width: 100%">100%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5 class="h5-darkgrey text-darkgrey pt-2">MySql : </h5>
-                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                            aria-label="Example with label" aria-valuenow="90" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="progress-bar bg-purple" style="width: 90%">90%</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5 class="h5-darkgrey text-darkgrey pt-2">Symfony : </h5>
-                                        <div class="progress bg-darkgrey mb-1" role="progressbar"
-                                            aria-label="Example with label" aria-valuenow="100" aria-valuemin="0"
-                                            aria-valuemax="100">
-                                            <div class="progress-bar bg-purple" style="width: 100%">100%</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row align-items-center col-12 col-lg-5 ">
-                        <h3 data-translate="about.secondTitle" class="h3-purple mt-3 mt-lg-1">About me</h3>
-                        <p data-translate="about.description"
-                            class="text-darkgrey d-flex align-items-center text-center text-lg-start pt-2">
-                            Je suis <span data-translate="about.name">Noureddine MOUATAMID</span>, un jeune de vingt-trois ans passionné
-                            par le monde de la
-                            technologie et du développement professionnel. Actuellement, je réside dans la magnifique
-                            ville de Cannes, où je suis engagé dans un parcours de formation professionnelle à l'AFPA.
-                            Mon objectif est d'obtenir un diplôme professionnel de niveau bac +2.
 
-                            Depuis mon plus jeune âge, j'ai développé un intérêt profond pour la technologie et la façon
-                            dont elle peut transformer notre mode de vie et de travail. Ma formation actuelle me donne
-                            l'opportunité d'acquérir des compétences avancées et des connaissances spécialisées qui me
-                            prépareront aux défis et aux opportunités futures dans le domaine que j'aime.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="d-flex align-items-center justify-content-center bg-img h-page" id="portfolio">
-            <div class="container row justify-content-center py-5">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center">
-                        <div class="card h-100" id="cards" style="width: 18rem;">
-                            <img src="img/png/siteCar.png" class="card-img-top" alt="Site voiture">
-                            <div class="card-body">
-                                <h5 data-translate="portfolio.titleCar" class="card-title">Site Voiture</h5>
-                                <p data-translate="portfolio.descriptionCar" class="card-text">Page d'accueil d'un site de vente de voitures simple utilisant JavaScript, HTML, CSS</p>
-                                <div class="d-flex mt-3">
-                                    <a data-translate="portfolio.visit_site" href="https://noureddinemt.github.io/Site-voiture/" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary me-2">
-                                        <i class="fas fa-link me-1"></i> Visit Site
-                                    </a>
-                                    <a href="https://github.com/NoureddineMT/Site-voiture" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary">
-                                        <i class="fab fa-github me-1"></i> Github
-                                    </a>
+                            <div class="mt-8">
+                                <h4 data-translate="about.skills" class="text-xl font-bold text-primary-600 dark:text-primary-300">
+                                    Skills :</h4>
+                                <div class="mt-4 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+                                    <div>
+                                        <p class="mb-1 flex justify-between text-sm font-semibold text-zinc-700 dark:text-zinc-200">
+                                            <span>Html&amp;Css</span><span>100%</span>
+                                        </p>
+                                        <div class="skill-track" role="progressbar" aria-label="Html&Css" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="skill-fill" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 flex justify-between text-sm font-semibold text-zinc-700 dark:text-zinc-200">
+                                            <span>JS</span><span>95%</span>
+                                        </p>
+                                        <div class="skill-track" role="progressbar" aria-label="JS" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="skill-fill" style="width: 95%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 flex justify-between text-sm font-semibold text-zinc-700 dark:text-zinc-200">
+                                            <span>PHP</span><span>90%</span>
+                                        </p>
+                                        <div class="skill-track" role="progressbar" aria-label="PHP" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="skill-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 flex justify-between text-sm font-semibold text-zinc-700 dark:text-zinc-200">
+                                            <span>Wordpress</span><span>100%</span>
+                                        </p>
+                                        <div class="skill-track" role="progressbar" aria-label="Wordpress" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="skill-fill" style="width: 100%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 flex justify-between text-sm font-semibold text-zinc-700 dark:text-zinc-200">
+                                            <span>MySql</span><span>90%</span>
+                                        </p>
+                                        <div class="skill-track" role="progressbar" aria-label="MySql" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="skill-fill" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p class="mb-1 flex justify-between text-sm font-semibold text-zinc-700 dark:text-zinc-200">
+                                            <span>Symfony</span><span>100%</span>
+                                        </p>
+                                        <div class="skill-track" role="progressbar" aria-label="Symfony" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                                            <div class="skill-fill" style="width: 100%"></div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center">
-                        <div class="card h-100" id="cards" style="width: 18rem;">
-                            <img src="img/png/kit.png" class="card-img-top" alt="Kit tambour">
-                            <div class="card-body">
-                                <h5 data-translate="portfolio.titleKit" class="card-title">Kit Tambour</h5>
-                                <p data-translate="portfolio.descriptionKit" class="card-text">Page d'accueil d'un site de vente de voitures simple utilisant JavaScript, HTML, CSS</p>
-                                <div class="d-flex mt-3">
-                                    <a data-translate="portfolio.visit_site" href="https://noureddinemt.github.io/tambours_jQuery/" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary me-2">
-                                        <i class="fas fa-link me-1"></i> Visit Site
-                                    </a>
-                                    <a href="https://github.com/NoureddineMT/tambours_jQuery" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary">
-                                        <i class="fab fa-github me-1"></i> Github
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center">
-                        <div class="card h-100" id="cards" style="width: 18rem;">
-                            <img src="img/png/Killer.png" class="card-img-top" alt="Killer game">
-                            <div class="card-body">
-                                <h5 data-translate="portfolio.titleKiller" class="card-title">Killer Game</h5>
-                                <p data-translate="portfolio.descriptionKiller" class="card-text">Page d'accueil d'un site de vente de voitures simple utilisant JavaScript, HTML, CSS</p>
-                                <div class="d-flex mt-3">
-                                    <a data-translate="portfolio.visit_site" href="https://noureddinemt.github.io/killergame/" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary me-2">
-                                        <i class="fas fa-link me-1"></i> Visit Site
-                                    </a>
-                                    <a href="https://github.com/NoureddineMT/killergame" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary">
-                                        <i class="fab fa-github me-1"></i> Github
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center">
-                        <div class="card h-100" id="cards" style="width: 18rem;">
-                            <img src="img/png/tmdb.png" class="card-img-top" alt="NmtDB">
-                            <div class="card-body">
-                                <h5 data-translate="portfolio.titleTmdb" class="card-title">NmtDB</h5>
-                                <p data-translate="portfolio.descriptionTmdb" class="card-text">Page d'accueil d'un site de vente de voitures simple utilisant JavaScript, HTML, CSS</p>
-                                <div class="d-flex mt-3">
-                                    <a data-translate="portfolio.visit_site" href="https://nmt-db.vercel.app" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary me-2">
-                                        <i class="fas fa-link me-1"></i> Visit Site
-                                    </a>
-                                    <a href="https://github.com/NoureddineMT/NmtDB" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary">
-                                        <i class="fab fa-github me-1"></i> Github
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-6 col-lg-4 d-flex justify-content-center">
-                        <div class="card h-100" id="cards" style="width: 18rem;">
-                            <img src="img/png/lms.png" class="card-img-top" alt="LMS">
-                            <div class="card-body">
-                                <h5 data-translate="portfolio.titleLms" class="card-title">LMS Platform</h5>
-                                <p data-translate="portfolio.descriptionLms" class="card-text">Page d'accueil d'un site de vente de voitures simple utilisant JavaScript, HTML, CSS</p>
-                                <div class="d-flex mt-3">
-                                    <a data-translate="portfolio.visit_site" href="https://mon-lms.com" target="_blank" rel="noopener noreferrer" class="btn2 btn-primary me-2">
-                                        <i class="fas fa-link me-1"></i> Visit Site
-                                    </a>
-                                </div>
-                            </div>
+
+                        <div class="lg:col-span-5">
+                            <h3 data-translate="about.secondTitle" class="text-2xl font-bold text-primary-600 dark:text-primary-300">
+                                About me</h3>
+                            <p data-translate="about.description"
+                                class="mt-3 text-center text-zinc-600 dark:text-zinc-300 lg:text-left">
+                                I am <span data-translate="about.name">Noureddine MOUATAMID</span>, a twenty-four-year-old
+                                passionate about technology and professional development. Currently, I live in the
+                                beautiful city of Cannes, where I am pursuing a vocational training program at AFPA.
+                                My goal is to obtain a Bac+2 level professional diploma.
+
+                                Since childhood, I have developed a deep interest in technology and its impact on our
+                                way of life and work. My current training allows me to acquire advanced skills and
+                                specialized knowledge that will prepare me for future challenges and opportunities in
+                                the field I love.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="d-flex align-items-center bg-white justify-content-center h-page pt-3 " id="contact">
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 col-md-8 col-sm-10">
-                        <div class="card shadow-lg border-0 rounded-3 p-4">
-                            <h2 data-translate="contact.title" class="text-center text-dark mb-4">Contact Me</h2>
-                            <div id="form-feedback" class="alert d-none mb-3">
+
+        <section id="portfolio"
+            class="relative overflow-hidden bg-[url('../img/png/spacr.jpg')] bg-cover bg-center bg-fixed py-20 md:py-28">
+            <div class="absolute inset-0 bg-zinc-950/75"></div>
+            <div class="container relative z-10 mx-auto px-4">
+                <h2 data-translate="portfolio.sectionTitle" class="reveal mb-12 text-center text-3xl font-extrabold text-white sm:text-4xl">
+                    Portfolio</h2>
+                <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                    <article class="reveal card-portfolio">
+                        <img src="img/png/siteCar.png" class="h-48 w-full object-cover" alt="Site voiture" loading="lazy">
+                        <div class="p-5">
+                            <h3 data-translate="portfolio.titleCar" class="text-lg font-bold text-zinc-900 dark:text-white">
+                                Car Website</h3>
+                            <p data-translate="portfolio.descriptionCar" class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                                Homepage of a simple car sales website using JavaScript, HTML, CSS</p>
+                            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="chip">HTML</span>
+                                <span class="chip">CSS</span>
+                                <span class="chip">JavaScript</span>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <a data-translate="portfolio.visit_site" href="https://noureddinemt.github.io/Site-voiture/"
+                                    target="_blank" rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fas fa-link"></i> Visit Site
+                                </a>
+                                <a href="https://github.com/NoureddineMT/Site-voiture" target="_blank"
+                                    rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fab fa-github"></i> Github
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal card-portfolio">
+                        <img src="img/png/kit.png" class="h-48 w-full object-cover" alt="Kit tambour" loading="lazy">
+                        <div class="p-5">
+                            <h3 data-translate="portfolio.titleKit" class="text-lg font-bold text-zinc-900 dark:text-white">
+                                Interactive Drum Kit with jQuery</h3>
+                            <p data-translate="portfolio.descriptionKit" class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                                This code creates a virtual drum kit using HTML, CSS, and JavaScript (with jQuery).</p>
+                            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="chip">HTML</span>
+                                <span class="chip">CSS</span>
+                                <span class="chip">jQuery</span>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <a data-translate="portfolio.visit_site" href="https://noureddinemt.github.io/tambours_jQuery/"
+                                    target="_blank" rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fas fa-link"></i> Visit Site
+                                </a>
+                                <a href="https://github.com/NoureddineMT/tambours_jQuery" target="_blank"
+                                    rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fab fa-github"></i> Github
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal card-portfolio">
+                        <img src="img/png/Killer.png" class="h-48 w-full object-cover" alt="Killer game" loading="lazy">
+                        <div class="p-5">
+                            <h3 data-translate="portfolio.titleKiller" class="text-lg font-bold text-zinc-900 dark:text-white">
+                                Survival Game with Jason</h3>
+                            <p data-translate="portfolio.descriptionKiller" class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                                The code simulates a battle between Jason and a group of survivors with random skills.</p>
+                            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="chip">JavaScript</span>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <a data-translate="portfolio.visit_site" href="https://noureddinemt.github.io/killergame/"
+                                    target="_blank" rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fas fa-link"></i> Visit Site
+                                </a>
+                                <a href="https://github.com/NoureddineMT/killergame" target="_blank"
+                                    rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fab fa-github"></i> Github
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal card-portfolio">
+                        <img src="img/png/tmdb.png" class="h-48 w-full object-cover" alt="NmtDB" loading="lazy">
+                        <div class="p-5">
+                            <h3 data-translate="portfolio.titleTmdb" class="text-lg font-bold text-zinc-900 dark:text-white">
+                                React: NmtDB</h3>
+                            <p data-translate="portfolio.descriptionTmdb" class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                                Web application for movie management, built with React and the TMDB API. It offers
+                                search, display, and management features for a personalized movie list.</p>
+                            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="chip">React</span>
+                                <span class="chip">TMDB API</span>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <a data-translate="portfolio.visit_site" href="https://nmt-db.vercel.app" target="_blank"
+                                    rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fas fa-link"></i> Visit Site
+                                </a>
+                                <a href="https://github.com/NoureddineMT/NmtDB" target="_blank"
+                                    rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fab fa-github"></i> Github
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="reveal card-portfolio">
+                        <img src="img/png/lms.png" class="h-48 w-full object-cover" alt="LMS" loading="lazy">
+                        <div class="p-5">
+                            <h3 data-translate="portfolio.titleLms" class="text-lg font-bold text-zinc-900 dark:text-white">
+                                Symfony: LMS</h3>
+                            <p data-translate="portfolio.descriptionLms" class="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+                                I have created a website that manages an online learning platform using Symfony.</p>
+                            <div class="mt-3 flex flex-wrap gap-1.5">
+                                <span class="chip">Symfony</span>
+                                <span class="chip">PHP</span>
+                            </div>
+                            <div class="mt-4 flex flex-wrap gap-2">
+                                <a data-translate="portfolio.visit_site" href="https://mon-lms.com" target="_blank"
+                                    rel="noopener noreferrer" class="btn-gradient-sm">
+                                    <i class="fas fa-link"></i> Visit Site
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-zinc-50 py-20 dark:bg-zinc-950 md:py-28">
+            <div class="container mx-auto px-4">
+                <div class="mx-auto grid max-w-5xl gap-8 lg:grid-cols-5">
+                    <div class="reveal lg:col-span-3">
+                        <div class="card-surface p-6 sm:p-8">
+                            <h2 data-translate="contact.title"
+                                class="text-center text-2xl font-extrabold text-zinc-900 dark:text-white sm:text-3xl">
+                                Contact Me</h2>
+
+                            <div id="form-feedback" class="mt-4 hidden rounded-xl p-3 text-sm" role="alert">
                                 <span id="feedback-message"></span>
                             </div>
-                            <form id="contactForm">
-                                <div class="mb-3">
+
+                            <form id="contactForm" class="mt-6 space-y-4">
+                                <div>
                                     <label data-translate="contact.name" for="from_name"
-                                        class="form-label fw-semibold text-dark">Name:</label>
-                                    <input type="text" class="form-control" id="from_name" name="from_name"
+                                        class="mb-1 block text-sm font-semibold text-zinc-700 dark:text-zinc-200">Name:</label>
+                                    <input type="text" class="form-input" id="from_name" name="from_name"
                                         placeholder="John Doe" required>
                                 </div>
-                                <div class="mb-3">
+                                <div>
                                     <label data-translate="contact.email" for="email"
-                                        class="form-label fw-semibold text-dark">Email:</label>
-                                    <input type="email" class="form-control" id="email" name="email"
+                                        class="mb-1 block text-sm font-semibold text-zinc-700 dark:text-zinc-200">Email:</label>
+                                    <input type="email" class="form-input" id="email" name="email"
                                         placeholder="hola@exemple.com" required>
                                 </div>
-                                <div class="mb-3">
+                                <div>
                                     <label data-translate="contact.subject" for="subject"
-                                        class="form-label fw-semibold text-dark">Subject:</label>
-                                    <select class="form-select text-dark" id="subject" name="subject" required>
-                                        <option data-translate="contact.subjectSelect" class="text-dark" value=""
-                                            selected disabled>Select a subject</option>
-                                        <option data-translate="contact.subjectJob" class="text-dark"
-                                            value="Job Opportunity">Job Opportunity</option>
-                                        <option data-translate="contact.subjectFreelance" class="text-dark"
-                                            value="Freelance Project">Freelance Project</option>
-                                        <option data-translate="contact.other" class="text-dark" value="Other">Other
-                                        </option>
+                                        class="mb-1 block text-sm font-semibold text-zinc-700 dark:text-zinc-200">Subject:</label>
+                                    <select class="form-input" id="subject" name="subject" required>
+                                        <option data-translate="contact.subjectSelect" value="" selected disabled>
+                                            Select a subject</option>
+                                        <option data-translate="contact.subjectJob" value="Job Opportunity">Job
+                                            Opportunity</option>
+                                        <option data-translate="contact.subjectFreelance" value="Freelance Project">
+                                            Freelance Project</option>
+                                        <option data-translate="contact.other" value="Other">Other</option>
                                     </select>
                                 </div>
-                                <div class="mb-3">
+                                <div>
                                     <label data-translate="contact.message" for="message"
-                                        class="form-label fw-semibold text-dark">Message:</label>
-                                    <textarea class="form-control" id="message" name="message" rows="4"
+                                        class="mb-1 block text-sm font-semibold text-zinc-700 dark:text-zinc-200">Message:</label>
+                                    <textarea class="form-input" id="message" name="message" rows="4"
                                         placeholder="Hola..." required></textarea>
                                 </div>
-                                <div class="mb-3 text-center recaptcha-container">
-                                    <div class="g-recaptcha" data-sitekey="6LdV9-0qAAAAAAo-a1d0IdmrZ8quS0aYzheMc49z">
-                                    </div>
+                                <div class="flex justify-center py-1">
+                                    <div class="g-recaptcha origin-center scale-90 sm:scale-100"
+                                        data-sitekey="6LdV9-0qAAAAAAo-a1d0IdmrZ8quS0aYzheMc49z"></div>
                                 </div>
-                                <div class="d-grid">
-                                    <button data-translate="contact.submit" type="button" id="sendButton"
-                                        class="btn btn-primary fw-semibold" onclick="sendEmail()">Send Message</button>
-                                </div>
+                                <button data-translate="contact.submit" type="button" id="sendButton"
+                                    onclick="sendEmail()" class="btn-gradient w-full">Send Message</button>
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-8 col-sm-10 mt-4 mt-lg-0">
-                        <div class="card shadow-lg border-0 rounded-3 p-4 h-100">
-                            <h4 data-translate="contact.contactInfo" class="text-darkgrey mb-4">Informazioni di contatto</h4>
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-purple rounded-circle p-2 me-2 d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-envelope "></i>
-                                </div>
+
+                    <div class="reveal lg:col-span-2">
+                        <div class="card-surface h-full p-6 sm:p-8">
+                            <h4 data-translate="contact.contactInfo" class="mb-4 text-xl font-bold text-zinc-900 dark:text-white">
+                                Contact Information</h4>
+
+                            <div class="mb-4 flex items-start gap-3">
+                                <span
+                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-white">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
                                 <div>
-                                    <h6 class="mb-0 text-dark">Email</h6>
-                                    <p class="mb-0 text-dark" onclick="this.textContent='noureddinemouatamid9@gmail.com'" data-translate="about.email" style="cursor: pointer">Clicca per visualizzare l'email</p>
+                                    <h6 class="font-semibold text-zinc-900 dark:text-white">Email</h6>
+                                    <p class="cursor-pointer text-sm text-zinc-500 dark:text-zinc-400"
+                                        onclick="this.textContent='noureddinemouatamid9@gmail.com'"
+                                        data-translate="about.email">Click to view the email</p>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-purple rounded-circle p-2 me-2 d-flex align-items-center justify-content-center">
+
+                            <div class="mb-4 flex items-start gap-3">
+                                <span
+                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-white">
                                     <i class="fas fa-phone"></i>
-                                </div>
+                                </span>
                                 <div>
-                                    <h6 class="mb-0 text-dark" data-translate="contact.phone">Telefono</h6>
-                                    <p class="mb-0 text-dark">0609552594</p>
+                                    <h6 class="font-semibold text-zinc-900 dark:text-white" data-translate="contact.phone">
+                                        Phone</h6>
+                                    <p class="text-sm text-zinc-500 dark:text-zinc-400">0609552594</p>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="bg-purple rounded-circle p-2 me-2 d-flex align-items-center justify-content-center">
-                                    <i class="fas fa-map-marker-alt "></i>
-                                </div>
+
+                            <div class="mb-4 flex items-start gap-3">
+                                <span
+                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-accent-500 text-white">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </span>
                                 <div>
-                                    <h6 class="mb-0 text-dark" data-translate="contact.location">Località</h6>
-                                    <p class="mb-0 text-dark">Cannes, Francia</p>
+                                    <h6 class="font-semibold text-zinc-900 dark:text-white" data-translate="contact.location">
+                                        Location</h6>
+                                    <p class="text-sm text-zinc-500 dark:text-zinc-400">Cannes, France</p>
                                 </div>
                             </div>
-                            <div class="mt-4">
-                                <h5 data-translate="contact.socialLinks" class="text-dark mb-3">Social</h5>
-                                <div class="d-flex justify-content-start">
-                                    <a href="https://github.com/NoureddineMT" target="_blank" class="me-3 fs-4 text-decoration-none">
-                                        <i class="fab fa-github text-purple"></i>
-                                    </a>
-                                </div>
+
+                            <div class="mt-6">
+                                <h5 data-translate="contact.socialLinks" class="mb-3 font-bold text-zinc-900 dark:text-white">
+                                    Social Links</h5>
+                                <a href="https://github.com/NoureddineMT" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub profile"
+                                    class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-zinc-100 text-lg text-primary-600 transition hover:-translate-y-0.5 hover:bg-primary-50 dark:bg-white/10 dark:text-primary-300 dark:hover:bg-white/20">
+                                    <i class="fab fa-github"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <div id="cookie-modal" class="modal fade" tabindex="-1" aria-labelledby="cookie-modal-label" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title text-center text-dark" id="cookie-modal-label"
-                            data-translate="cookie.title">
-                            🍪🛑
-                        </h5>
-                    </div>
-                    <div class="modal-body ">
-                        <p class="text-dark" data-translate="cookie.message">
-                            Questo sito utilizza i cookie per migliorare la tua esperienza. Continuando, accetti l'uso
-                            dei cookie.
-                        </p>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="accept-cookies" class="btn btn-primary" data-translate="cookie.btn">
-                            Accetta
-                        </button>
-                    </div>
+
+        <div id="cookie-modal" class="fixed inset-0 z-[1100] hidden items-center justify-center p-4" role="dialog"
+            aria-modal="true" aria-labelledby="cookie-modal-label" aria-hidden="true">
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="card-surface relative w-full max-w-md p-6">
+                <h5 id="cookie-modal-label" data-translate="cookie.title"
+                    class="text-center text-lg font-bold text-zinc-900 dark:text-white">
+                    🍪🛑
+                </h5>
+                <p data-translate="cookie.message" class="mt-3 text-center text-sm text-zinc-600 dark:text-zinc-300">
+                    Questo sito utilizza i cookie per migliorare la tua esperienza. Continuando, accetti l'uso
+                    dei cookie.
+                </p>
+                <div class="mt-5 flex justify-center">
+                    <button id="accept-cookies" data-translate="cookie.btn" class="btn-gradient">
+                        Accetta
+                    </button>
                 </div>
             </div>
         </div>
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="js/app.js"></script>
-    <script>
-
-    </script>
 </body>
 
 </html>

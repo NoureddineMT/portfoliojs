@@ -15,6 +15,7 @@
         "skills": "Competenze"
     },
     "portfolio": {
+        "sectionTitle": "Portfolio",
         "titleCar": "Sito Auto",
         "descriptionCar": "Homepage di un semplice sito di vendita di auto usando JavaScript, HTML, CSS",
         "titleKit": "Drum Kit Interattivo con jQuery",
@@ -40,7 +41,9 @@
         "message": "Messaggio: ",
         "submit": "Invia messaggio",
         "phone": "Telefono: ",
-        "location": "Località: "
+        "location": "Località: ",
+        "contactInfo": "Informazioni di contatto",
+        "socialLinks": "Social"
     },
     "cookie": {
         "message": "🍪 Questo sito utilizza i cookie per migliorare l'esperienza utente.",

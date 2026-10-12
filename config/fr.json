@@ -15,6 +15,7 @@
         "skills": "Compétences"
     },
     "portfolio": {
+        "sectionTitle": "Portfolio",
         "titleCar": "Site Voiture",
         "descriptionCar": "Page d'accueil d'un simple site de vente de voitures utilisant JavaScript, HTML, CSS",
         "titleKit": "Kit de batterie interactif avec jQuery",
@@ -40,7 +41,9 @@
         "message": "Message: ",
         "submit": "Envoyer le message ",
         "phone": "Téléphone: ",
-        "location": "Localité: "
+        "location": "Localité: ",
+        "contactInfo": "Informations de contact",
+        "socialLinks": "Réseaux sociaux"
     },
     "cookie": {
         "message": "🍪 Ce site utilise des cookies pour améliorer l'expérience utilisateur.",
